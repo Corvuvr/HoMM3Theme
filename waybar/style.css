@@ -1,0 +1,39 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+#window {
+    padding: 4px 0px 4px 0px;
+}
+
+window.hoverbar#waybar {
+    background-image: url(
+        "~/.config/HoMM3Theme/HoMM3BackgroundTiled.jpg");
+    color: white;
+    border-style: ridge;
+    border-width: 2px;
+    border-bottom-width: 1px;
+    border-color: rgba(130, 130, 60, 1.0);
+}
+
+window.resourcebar#waybar {
+    background-image: url( 
+        "~/.config/HoMM3Theme/HoMM3ResourceBarTiled.jpg");
+    color: white;
+    border-style: ridge;
+    border-width: 2px;
+    border-top-width: 0px;
+    border-color: rgba(130, 130, 60, 1.0);
+}
+
+label.module {
+    padding: 3px 15px 7px 15px;
+    background: transparent;
+    color: white;
+    margin: 2px;
+    box-shadow: inset 2px 2px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "resourcebar",
+        "layer": "top",
+        "position": "bottom",
+        "modules-left": ["battery", "memory"],
+        "modules-right": ["clock"],
+        "battery": {
+            "format": "{capacity}% {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "wireplumber": {
+            "on-click-left": "wiremix"
+        },
+        "clock": {
+            "format": "Месяц: {:%m, Неделя: %U, День: %u}",
+            "format-alt": "{:%R %D}"
+        }
+    }
+    ,
+    {
+        "name": "hoverbar",
+        "layer": "top",
+        "passthrough": true,
+        "position": "bottom",
+        "modules-center": ["hyprland/window"],
+        "hyprland/window": {
+            "format": "<span>{}</span>",
+            "expand": true
+        }
+    }
+]
