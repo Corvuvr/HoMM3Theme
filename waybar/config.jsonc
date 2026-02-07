@@ -3,18 +3,94 @@
         "name": "resourcebar",
         "layer": "top",
         "position": "bottom",
-        "modules-left": ["battery", "memory"],
+        "modules-left": [
+            "custom/battery-icon", "custom/battery-value", 
+            "custom/audio-icon", "wireplumber", 
+            "custom/cpu-icon", "cpu", 
+            "custom/temperature-icon", "temperature", 
+            "custom/network-icon", "custom/network-value", 
+            "custom/bluetooth-icon", "bluetooth", 
+            "custom/memory-icon", "custom/memory-value"
+        ],
         "modules-right": ["clock"],
-        "battery": {
-            "format": "{capacity}% {icon}",
-            "format-icons": ["", "", "", "", ""]
-        },
         "wireplumber": {
             "on-click-left": "wiremix"
         },
         "clock": {
             "format": "Месяц: {:%m, Неделя: %U, День: %u}",
             "format-alt": "{:%R %D}"
+        },
+        "custom/battery-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        },
+        "custom/battery-value": {
+            "exec": "cat /sys/class/power_supply/BAT0/capacity",
+            "interval": 10,
+            "format": "{}",
+            "tooltip": false
+        },
+        "custom/audio-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        },
+        "wireplumber": {
+            "format": "{volume}"
+        },
+        "custom/cpu-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        },
+        "cpu": {
+            "format": "{usage}"
+        },
+        "custom/temperature-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        }, 
+        "temperature": {
+            "format": "{temperatureC}"
+        }, 
+        "custom/network-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        }, 
+        "custom/network-value": {
+            "exec": "ping -c1 8.8.8.8 | grep -Eo '[01] received' | cut -c1",
+            "interval": 10,
+            "format": "{}",
+            "tooltip": false
+        },
+        "custom/bluetooth-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        },
+        "bluetooth": {
+            "format": "{num_connections}"
+        },
+        "custom/memory-icon": {
+            "exec": "echo '.'",
+            "interval": 0,
+            "format": "{}",
+            "tooltip": false
+        },
+        "custom/memory-value": {
+            "exec": "awk '/MemTotal/ {t=$2} /MemAvailable/ {a=$2} END {printf \"%.0f\\n\", (t-a)/1024}' /proc/meminfo", // In megabytes
+            "interval": 1,
+            "format": "{}",
+            "tooltip": false
         }
     }
     ,

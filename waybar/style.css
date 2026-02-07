@@ -12,7 +12,7 @@
 
 window.hoverbar#waybar {
     background-image: url(
-        "~/.config/HoMM3Theme/HoMM3BackgroundTiled.jpg");
+        "/home/corvur/.config/HoMM3Theme/HoMM3BackgroundTiled.jpg");
     color: white;
     border-style: ridge;
     border-width: 2px;
@@ -22,7 +22,7 @@ window.hoverbar#waybar {
 
 window.resourcebar#waybar {
     background-image: url( 
-        "~/.config/HoMM3Theme/HoMM3ResourceBarTiled.jpg");
+        "/home/corvur/.config/HoMM3Theme/HoMM3ResourceBarTiled.jpg");
     color: white;
     border-style: ridge;
     border-width: 2px;
@@ -31,9 +31,112 @@ window.resourcebar#waybar {
 }
 
 label.module {
-    padding: 3px 15px 7px 15px;
-    background: transparent;
     color: white;
-    margin: 2px;
+    background: transparent;
+    padding: 2px 8px 2px 8px;
     box-shadow: inset 2px 2px rgba(0, 0, 0, 0.2);
+    min-width: 10px;
+    min-height: 10px;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 4px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: rgba(200, 20, 15, 0.4);
+}
+
+#custom-battery-icon {
+    color: transparent;
+    margin-left: 5px;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconWood.png");
+}
+#custom-battery-value {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-cpu-icon {
+    color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconOre.png");
+}
+#cpu {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-audio-icon {
+    color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconMercury.png");
+}
+#wireplumber {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-temperature-icon {
+    color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconSulfur.png");
+}
+#temperature {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-network-icon {
+    color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconGems.png");
+}
+#custom-network-value {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-bluetooth-icon {
+    color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconCrystal.png");
+}
+#bluetooth {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-memory-icon {
+    color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconGold.png");
+}
+#custom-memory-value {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
 }
