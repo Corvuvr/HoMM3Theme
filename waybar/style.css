@@ -102,19 +102,6 @@ label.module {
     box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
 }
 
-#custom-network-icon {
-    color: transparent;
-    border-right-width: 0px;
-    background-image: url( 
-        "/home/corvur/.config/HoMM3Theme/HoMM3IconGems.png");
-}
-#custom-network-value {
-    margin-right: 4px;
-    padding-left: 6px;
-    border-left-width: 0px;
-    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
-}
-
 #custom-bluetooth-icon {
     color: transparent;
     border-right-width: 0px;
@@ -128,8 +115,24 @@ label.module {
     box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
 }
 
-#custom-memory-icon {
+#custom-network-icon {
     color: transparent;
+    border-right-width: 0px;
+    background-image: url( 
+        "/home/corvur/.config/HoMM3Theme/HoMM3IconGems.png");
+}
+#custom-network-value {
+    margin-right: 4px;
+    padding-left: 6px;
+    border-left-width: 0px;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#custom-memory-icon {
+    min-width: 15px;
+    min-height: 15px;
+    color: transparent;
+    padding-right: 14px;
     border-right-width: 0px;
     background-image: url( 
         "/home/corvur/.config/HoMM3Theme/HoMM3IconGold.png");

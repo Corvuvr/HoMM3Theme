@@ -8,8 +8,8 @@
             "custom/audio-icon", "wireplumber", 
             "custom/cpu-icon", "cpu", 
             "custom/temperature-icon", "temperature", 
-            "custom/network-icon", "custom/network-value", 
             "custom/bluetooth-icon", "bluetooth", 
+            "custom/network-icon", "custom/network-value", 
             "custom/memory-icon", "custom/memory-value"
         ],
         "modules-right": ["clock"],
