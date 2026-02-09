@@ -12,7 +12,9 @@
             "custom/network-icon", "custom/network-value", 
             "custom/memory-icon", "custom/memory-value"
         ],
-        "modules-right": ["clock"],
+        "modules-right": [
+            "custom/clock"
+        ],
         "wireplumber": {
             "on-click-left": "wiremix"
         },
@@ -91,6 +93,12 @@
             "interval": 1,
             "format": "{}",
             "tooltip": false
+        },
+        "custom/clock": {
+            "exec": "./HoMM3Clock.sh",
+            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" HoMM3Clock.sh",
+            "exec-on-event": true,
+            "interval": 1
         }
     }
     ,
