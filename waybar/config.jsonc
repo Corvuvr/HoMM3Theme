@@ -95,8 +95,8 @@
             "tooltip": false
         },
         "custom/clock": {
-            "exec": "./HoMM3Clock.sh",
-            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" HoMM3Clock.sh",
+            "exec": "~/.config/waybar/HoMM3Clock.sh",
+            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" ~/.config/waybar/HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" ~/.config/waybar/HoMM3Clock.sh",
             "exec-on-event": true,
             "interval": 1
         }
