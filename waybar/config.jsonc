@@ -1,30 +1,31 @@
 [
     {
         "name": "resourcebar",
+        "output": [
+            // "hyprout-1", // Hyprout is my virtual screen
+            "eDP-1"
+        ],
         "layer": "top",
         "position": "bottom",
         "modules-left": [
             "custom/battery-icon", "custom/battery-value", 
-            "custom/audio-icon", "wireplumber", 
-            "custom/cpu-icon", "cpu", 
-            "custom/temperature-icon", "temperature", 
-            "custom/bluetooth-icon", "bluetooth", 
+            "custom/audio-icon", "wireplumber",
+            "custom/cpu-icon", "cpu",
+            "custom/temperature-icon", "temperature",
+            "custom/bluetooth-icon", "bluetooth",
             "custom/network-icon", "custom/network-value", 
             "custom/memory-icon", "custom/memory-value"
         ],
         "modules-right": [
             "custom/clock"
         ],
-        "wireplumber": {
-            "on-click-left": "wiremix"
-        },
         "clock": {
             "format": "Месяц: {:%m, Неделя: %U, День: %u}",
             "format-alt": "{:%R %D}"
         },
         "custom/battery-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         },
@@ -36,16 +37,18 @@
         },
         "custom/audio-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         },
         "wireplumber": {
-            "format": "{volume}"
+            "format": "{volume}",
+            "format-muted": "0",
+            "on-click": "kitty wiremix &"
         },
         "custom/cpu-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         },
@@ -54,7 +57,7 @@
         },
         "custom/temperature-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         }, 
@@ -63,7 +66,7 @@
         }, 
         "custom/network-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         }, 
@@ -75,7 +78,7 @@
         },
         "custom/bluetooth-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         },
@@ -84,19 +87,20 @@
         },
         "custom/memory-icon": {
             "exec": "echo '.'",
-            "interval": 0,
+            "interval": "once",
             "format": "{}",
             "tooltip": false
         },
         "custom/memory-value": {
             "exec": "awk '/MemTotal/ {t=$2} /MemAvailable/ {a=$2} END {printf \"%.0f\\n\", (t-a)/1024}' /proc/meminfo", // In megabytes
             "interval": 1,
+            "on-click": "kitty btop &",
             "format": "{}",
             "tooltip": false
         },
         "custom/clock": {
-            "exec": "~/.config/waybar/HoMM3Clock.sh",
-            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" ~/.config/waybar/HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" ~/.config/waybar/HoMM3Clock.sh",
+            "exec": "/home/$USER/.config/waybar/HoMM3Clock.sh",
+            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" /home/$USER/.config/waybar/HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" /home/$USER/.config/waybar/HoMM3Clock.sh",
             "exec-on-event": true,
             "interval": 1
         }
