@@ -1,5 +1,18 @@
 [
     {
+        "name": "frame",
+        "output": [
+            "eDP-1"
+        ],
+        "layer": "top",
+        "position": "top",
+        "exclusive": false,
+        "passthrough": true,
+        "reload_style_on_change": true,
+        "width": 1600,
+        "height": 1130
+    },
+    {
         "name": "resourcebar",
         "output": [
             // "hyprout-1", // Hyprout is my virtual screen
@@ -19,10 +32,6 @@
         "modules-right": [
             "custom/clock"
         ],
-        "clock": {
-            "format": "Месяц: {:%m, Неделя: %U, День: %u}",
-            "format-alt": "{:%R %D}"
-        },
         "custom/battery-icon": {
             "exec": "echo '.'",
             "interval": "once",
@@ -39,7 +48,8 @@
             "exec": "echo '.'",
             "interval": "once",
             "format": "{}",
-            "tooltip": false
+            "tooltip": false,
+            "on-click": "kitty wiremix &"
         },
         "wireplumber": {
             "format": "{volume}",
@@ -71,19 +81,21 @@
             "tooltip": false
         }, 
         "custom/network-value": {
-            "exec": "ping -c1 8.8.8.8 | grep -Eo '[01] received' | cut -c1",
+            "exec": "/home/$USER/.config/waybar/HoMM3Widgets/HoMM3Network.sh",
             "interval": 10,
             "format": "{}",
             "tooltip": false
         },
         "custom/bluetooth-icon": {
             "exec": "echo '.'",
+            "on-click": "kitty bluetui &",
             "interval": "once",
             "format": "{}",
             "tooltip": false
         },
         "bluetooth": {
-            "format": "{num_connections}"
+            "format": "{num_connections}",
+            "on-click": "kitty bluetui &"
         },
         "custom/memory-icon": {
             "exec": "echo '.'",
@@ -99,8 +111,8 @@
             "tooltip": false
         },
         "custom/clock": {
-            "exec": "/home/$USER/.config/waybar/HoMM3Clock.sh",
-            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" /home/$USER/.config/waybar/HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" /home/$USER/.config/waybar/HoMM3Clock.sh",
+            "exec": "/home/$USER/.config/waybar/HoMM3Widgets/HoMM3Clock.sh",
+            "on-click": "HOMM3_CLOCK=$(grep \"HOMM3_CLOCK=\" /home/$USER/.config/waybar/HoMM3Widgets/HoMM3Clock.sh); HOMM3_CLOCK=${HOMM3_CLOCK:-1}; HOMM3_CLOCK=$(((HOMM3_CLOCK + 1) % 2)); sed -i \"s/HOMM3_CLOCK=./HOMM3_CLOCK=$HOMM3_CLOCK/\" /home/$USER/.config/waybar/HoMM3Widgets/HoMM3Clock.sh",
             "exec-on-event": true,
             "interval": 1
         }
